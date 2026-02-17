@@ -1,0 +1,36 @@
+# ------------------------
+# Laravel Backend (sethluck/)
+# ------------------------
+/sethluck/vendor/
+/sethluck/node_modules/
+/sethluck/public/storage
+/sethluck/public/hot
+/sethluck/storage/*.key
+/sethluck/.env
+/sethluck/.env.backup
+/sethluck/.env.production
+/sethluck/Homestead.yaml
+/sethluck/Homestead.json
+/sethluck/.vagrant
+/sethluck/.phpunit.result.cache
+/sethluck/.phpactor.json
+/sethluck/auth.json
+/sethluck/bootstrap/compiled.php
+/sethluck/app/storage/
+
+# ------------------------
+# Frontend (sethluckweb/)
+# ------------------------
+/sethluckweb/node_modules/
+/sethluckweb/public/build
+/sethluckweb/npm-debug.log
+/sethluckweb/yarn-error.log
+
+# ------------------------
+# IDE / Editor / OS
+# ------------------------
+/.idea/
+/.vscode/
+/.fleet/
+.DS_Store
+Thumbs.db
