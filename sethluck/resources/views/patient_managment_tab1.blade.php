@@ -1,0 +1,69 @@
+@isset($patient)
+
+
+    <div class="gridcontainer">
+        <div class="column">
+            <div class="row">
+                <label for="fname">First Name</label><br>
+                <input type="text" name="fname" id="fname" class="pamaninputdisplay input" value="{{ $patient->fname }}"
+                    disabled>
+            </div>
+            <div class="row">
+                <label for="lname">Last Name</label><br>
+                <input type="text" name="lname" id="lname" class="pamaninputdisplay input" value="{{ $patient->lname }}"
+                    disabled>
+
+            </div>
+            <div class="row">
+                <label for="gender">Gender</label><br>
+                <input type="text" name="gender" id="gender" class="pamaninputdisplay input"
+                    value="{{ $patient->gender == 1 ? 'Male' : 'Female' }}" disabled>
+
+            </div>
+        </div>
+        <div class="column">
+            <div class="row">
+                <label for="add1">Address</label><br>
+                <input type="text" name="add1" id="add1" class="pamaninputdisplay input" value="{{ $patient->street }}"
+                    disabled>
+                <br>
+                <input type="text" name="add2" id="add2" class="pamaninputdisplay input" value="{{ $patient->area }}"
+                    disabled>
+                <br>
+                <input type="text" name="add3" id="add3" class="pamaninputdisplay input" value="{{ $patient->province }}"
+                    disabled>
+                <br>
+                <input type="text" name="add4" id="add4" class="pamaninputdisplay input" value="{{ $patient->postalcode }}"
+                    disabled>
+            </div>
+
+        </div>
+        <div class="column">
+            <div class="row">
+                <label for="dob">Date of Birth</label><br>
+                <input type="text" name="dob" id="dob" class="pamaninputdisplay input"
+                    value="{{ \Carbon\Carbon::parse($patient->dob)->format('Y-m-d') }}" disabled>
+            </div>
+            <div class="row">
+                <label for="phone">Phone Number</label><br>
+                <input type="text" name="phone" id="phone" class="pamaninputdisplay input"
+                    value="{{ $patient->phonenumber }}" disabled>
+            </div>
+            
+        </div>
+
+        <div style="height: 30px; clear: both; min-height: 30px;">
+        </div>
+        <form action="{{ route('save_summary') }}" method="post">
+            @csrf
+            <textarea name="summary" id="summary" class="summary_textarea"> {{ $patient->summary }}</textarea>
+            <input type="hidden" name="patientnic" id="patientnic" value="{{ $patient->nicnumber }}">
+            <div style="height: 20px; clear: both; min-height: 20px;">
+            </div>
+            <button type="submit" class="input_regi"><span>Save</span></button>
+        </form>
+    </div>
+
+
+
+@endisset
